@@ -1,5 +1,5 @@
-import React from 'react'
-import { render } from 'react-dom'
-import App from './App'
+import React from "react";
+import { render } from "react-dom";
+import GameMaster from "./GameMaster";
 
-render(<App />, document.getElementById('root'))
+render(<GameMaster />, document.getElementById("root"));
