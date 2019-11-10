@@ -9,8 +9,11 @@ class Player1 extends React.Component {
     }
 
     updateLabel(isClicked){
-      if(isClicked)
+      if(isClicked){
+        //const newNumber = this.state.counter+1;
+        //this.setState({counter: newNumber});
         return 'Player1 is playing right now';
+      }
       else
         return 'Play';
     }
@@ -19,7 +22,12 @@ class Player1 extends React.Component {
         <div>
             <h1>I'm Player1</h1>
             <label>Name: {this.props.name}</label>
-            <Button block variant="danger" onClick={this.props.whenclick} disabled={this.props.pressed}>{this.updateLabel(this.props.pressed)}</Button>
+            <br/>
+            <label>Played {this.props.played} times</label>
+
+<div class="text-right">
+            <Button  variant="danger" onClick={this.props.whenclick} disabled={this.props.pressed}>{this.updateLabel(this.props.pressed)}</Button>
+            </div>
         </div>
     );
   }
