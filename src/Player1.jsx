@@ -1,34 +1,42 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
-import { get } from 'https';
-import Button from 'react-bootstrap/Button';
+import "bootstrap/dist/css/bootstrap.css";
+import Button from "react-bootstrap/Button";
 
 class Player1 extends React.Component {
-    constructor(props){
-        super(props);
-    }
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
+    super(props);
+  }
 
-    updateLabel(isClicked){
-      if(isClicked){
-        //const newNumber = this.state.counter+1;
-        //this.setState({counter: newNumber});
-        return 'Player1 is playing right now';
-      }
-      else
-        return 'Play';
+  updateLabel(isClicked) {
+    if (isClicked) {
+      // const newNumber = this.state.counter+1;
+      // this.setState({counter: newNumber});
+      return "Player1 is playing right now";
     }
+    return "Play";
+  }
+
   render() {
-    return(
-        <div>
-            <h1>I'm Player1</h1>
-            <label>Name: {this.props.name}</label>
-            <br/>
-            <label>Played {this.props.played} times</label>
+    return (
+      <div>
+        <h1>I am Player1</h1>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <label>Name: {this.props.name}</label>
+        <br />
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <label>Played {this.props.played} times</label>
 
-<div class="text-right">
-            <Button  variant="danger" onClick={this.props.whenclick} disabled={this.props.pressed}>{this.updateLabel(this.props.pressed)}</Button>
-            </div>
+        <div className="text-right">
+          <Button
+            variant="danger"
+            onClick={this.props.whenclick}
+            disabled={this.props.pressed}
+          >
+            {this.updateLabel(this.props.pressed)}
+          </Button>
         </div>
+      </div>
     );
   }
 }
